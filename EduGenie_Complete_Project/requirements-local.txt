@@ -1,0 +1,5 @@
+-r requirements.txt
+torch>=2.5
+transformers>=4.48
+sentencepiece>=0.2
+safetensors>=0.5

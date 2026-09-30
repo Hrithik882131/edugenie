@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduGenie - Google Gemini powered learning assistant">
+    <title>EduGenie - AI Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">AI LEARNING ASSISTANT</p>
+                <h1>EduGenie</h1>
+                <p class="subtitle">
+                    Ask, explain, quiz, summarize, and build a personalized learning path.
+                </p>
+            </div>
+            <div class="status" id="status">Ready</div>
+        </header>
+
+        <section class="card">
+            <label for="task">Choose a task</label>
+            <select id="task">
+                <option value="qa">Ask a Question</option>
+                <option value="explain">Explain a Topic</option>
+                <option value="quiz">Generate Quiz</option>
+                <option value="summarize">Summarize Text</option>
+                <option value="learn">Recommend Learning Path</option>
+            </select>
+
+            <div id="standard-fields">
+                <label for="input-text">Your input</label>
+                <textarea id="input-text" rows="9"
+                    placeholder="Example: Explain the Pythagoras theorem in simple words."></textarea>
+            </div>
+
+            <div id="learning-fields" class="hidden">
+                <label for="topic">Topic</label>
+                <input id="topic" type="text" placeholder="Example: SQL">
+
+                <div class="two-column">
+                    <div>
+                        <label for="level">Current level</label>
+                        <select id="level">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="goal">Goal</label>
+                        <input id="goal" type="text" value="Build a strong foundation and practical skills.">
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-btn" type="button">Generate</button>
+        </section>
+
+        <section class="card result-card">
+            <div class="result-header">
+                <h2>Result</h2>
+                <button id="copy-btn" class="secondary" type="button" disabled>Copy</button>
+            </div>
+            <div id="result" class="result empty">Your result will appear here.</div>
+        </section>
+
+        <footer>
+            <span>EduGenie</span>
+            <span>Done by Sanjay</span>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
